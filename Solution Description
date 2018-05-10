@@ -1,0 +1,12 @@
+I have done it with the input stored only in LinkedLists and used a matrix only to display the results.
+For every ring (layer) of the original matrix, store the input in a separate LinkedList. Store all these LinkedLists in a TreeMap 
+where the indexes of the rows are the keys - starting with index '0' for the outer ring and so on until there are no more rings. 
+Thus the number of keys in the TreeMap will always be less than the number of rows. However, using the indexes of rows as keys is 
+still helpful in the proper ordering of the elements within the LinkedLists and in placing the rotated elements in their proper positions 
+in the double matrix.
+Iterate through the TreeMap and calculate rotations without repetitions for each ring. Then cut a number of elements that equals 
+these rotations from the front of the LinkedList for the respective ring and add it to the back of it. Then store the elements of 
+this LinkedList in their respective place in the matrix, represented by a double array.
+By the end of the interation through the TreeMap all rings are rotated and stored in their respective place in the double array.
+But be careful: there are a lot of details that have to be considered for all this to work!
+
